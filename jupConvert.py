@@ -2,10 +2,23 @@
 
 import os
 import sys
+
+def help():
+    print("---------------------------------------------------")
+    print("Utilitaire de convertion jupyter Notebook vers PDF")
+    print("---------------------------------------------------")
+    print(" ")
+    print("Usage : jupconvert originFile final_Name")
+    print(" ")
+    print("---------------------------------------------------")
+    print("Bug : leosamuel64@gmail.com")
+
 try:
     arg1 = sys.argv[1]
+    
     if arg1 == "-help" or arg1 == "--help":
-        print("Usage : jupconvert origin final_Name")
+        help()
+    
     else:
         if len(sys.argv)>=2:
             res = ""
@@ -14,12 +27,10 @@ try:
                     res+= sys.argv[i]+"\ "
                 else:
                     res+=sys.argv[i]
-        
-
         nomInit = arg1
         try :
             final_name = res
-        except _:
+        except:
             final_name = arg1
         del arg1
         del res
@@ -34,9 +45,8 @@ try:
             os.system('jupyter nbconvert --to PDF '+str(final_name)+".ipynb")
             os.system('rm '+str(final_name)+".ipynb")
             print("-----  FIN  -----")
-except _:
-    print("Utilitaire de convertion jupyter Notebook vers PDF")
-    print("Bug : leosamuel64@gmail.com")
+except:
+    help()
 
 
 
