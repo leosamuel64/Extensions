@@ -16,3 +16,11 @@ Utilisation :
 >> jupconvert FICHIERORIGINE NOMDUFICHIER
 ```
 
+## latexbuilder
+Compilateur LATEX
+
+Utilisation :  
+```Bash
+>> latexbuilder FICHIERORIGINE
+```
+
