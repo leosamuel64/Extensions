@@ -3,4 +3,5 @@ import os
 
 os.system('cp jupConvert.py /bin/jupconvert')
 os.system('cp latexbuilder.py /bin/latexbuilder')
+os.system('cp simui.py /bin/simui.py')
 

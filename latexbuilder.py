@@ -2,6 +2,7 @@
 
 import os
 import sys
+import simui
 
 def help():
     print("---------------------------------------------------")
@@ -75,9 +76,16 @@ def nettoie(titrepdf):
 
 
 # ------------------------  CODE PRINCIPAL  ------------------------
+t = ['article','report','letter','book']
+typedoc = simui.menu(t)
+typedoc=t[typedoc]
+
+t = ['french','english']
+langue = simui.menu(t)
+langue=t[langue]
 
 if verif():
-    init=['\\documentclass[10pt]{article}\n', '\t\n', '    \\usepackage[utf8x]{inputenc}\n', '    \\usepackage{stmaryrd}\n', '\t\\usepackage[T1]{fontenc}\n', '    \\usepackage[french]{babel}\n', '    \\usepackage{minted}\n', '\n', '\t\\setlength{\\hoffset}{-18pt}        \n', '\\setlength{\\oddsidemargin}{0pt} % Marge gauche sur pages impaires\n', '\\setlength{\\evensidemargin}{9pt} % Marge gauche sur pages paires\n', '\\setlength{\\marginparwidth}{54pt} % Largeur de note dans la marge\n', '\\setlength{\\textwidth}{481pt} % Largeur de la zone de texte (17cm)\n', '\\setlength{\\voffset}{-18pt} % Bon pour DOS\n', '\\setlength{\\marginparsep}{7pt} % Séparation de la marge\n', '\\setlength{\\topmargin}{0pt} % Pas de marge en haut\n', '\\setlength{\\headheight}{10pt} % Haut de page\n', '\\setlength{\\headsep}{10pt} % Entre le haut de page et le texte\n', '\\setlength{\\footskip}{27pt} % Bas de page + séparation\n', '\\setlength{\\textheight}{680pt} % Hauteur de la zone de texte (25cm)\n', '\n', '\t\\newtheorem{ex}{Exemple}\n', '\t\\newtheorem{prop}{Propriété}\n', '\t\\newtheorem{dem}{Démonstration}\n', '\t\\newtheorem{rq}{Remarque}\n', '    \\newtheorem{lem}{Lemme}\n', '    \\newtheorem{th}{Théorème}\n', '\t\\newtheorem{cor}{Corolaire}\n']
+    init=["\\documentclass[10pt]{"+typedoc+'}\n', '\t\n', '    \\usepackage[utf8x]{inputenc}\n', '    \\usepackage{stmaryrd}\n', '\t\\usepackage[T1]{fontenc}\n', '    \\usepackage['+langue+']{babel}\n', '    \\usepackage{minted}\n', '\n', '\t\\setlength{\\hoffset}{-18pt}        \n', '\\setlength{\\oddsidemargin}{0pt} % Marge gauche sur pages impaires\n', '\\setlength{\\evensidemargin}{9pt} % Marge gauche sur pages paires\n', '\\setlength{\\marginparwidth}{54pt} % Largeur de note dans la marge\n', '\\setlength{\\textwidth}{481pt} % Largeur de la zone de texte (17cm)\n', '\\setlength{\\voffset}{-18pt} % Bon pour DOS\n', '\\setlength{\\marginparsep}{7pt} % Séparation de la marge\n', '\\setlength{\\topmargin}{0pt} % Pas de marge en haut\n', '\\setlength{\\headheight}{10pt} % Haut de page\n', '\\setlength{\\headsep}{10pt} % Entre le haut de page et le texte\n', '\\setlength{\\footskip}{27pt} % Bas de page + séparation\n', '\\setlength{\\textheight}{680pt} % Hauteur de la zone de texte (25cm)\n', '\n', '\t\\newtheorem{ex}{Exemple}\n', '\t\\newtheorem{prop}{Propriété}\n', '\t\\newtheorem{dem}{Démonstration}\n', '\t\\newtheorem{rq}{Remarque}\n', '    \\newtheorem{lem}{Lemme}\n', '    \\newtheorem{th}{Théorème}\n', '\t\\newtheorem{cor}{Corolaire}\n']
     Nom = input("Auteur : ")
     titre = input("Titre : ")
 
