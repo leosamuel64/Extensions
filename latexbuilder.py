@@ -8,7 +8,7 @@ def help():
     print("Compilateur LATEX")
     print("---------------------------------------------------")
     print(" ")
-    print("Usage : latexbuild <source>")
+    print("Usage : latexbuilder <source>")
     print(" ")
     print("---------------------------------------------------")
     print("Bug : leosamuel64@gmail.com")
@@ -31,6 +31,7 @@ def verif():
         else:
             return True
     except:
+        help()
         return False
 
 def LitSource():
